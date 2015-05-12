@@ -1,0 +1,352 @@
+{
+    "basePath":"../../tpl/demo/"
+    , "demoPage":"demo.html"
+    , "detailPage":"detail.html"
+    , "extraMenu": [
+        {
+            "name":"API"
+            , "url":"../../docs_api/index.html"
+        }
+        , {
+            "name":"Download"
+            , "url":"//github.com/openjavascript/jquerycomps/archive/requirejs_master.zip"
+        }
+    ]
+    , "websiteLink": [
+        {
+            "name":"奇舞团"
+            , "url":"//qiwoo.org/"
+        }
+        , {
+            "name":"btbtd.org"
+            , "url":"//btbtd.org/"
+        }
+    ]
+    , "global": {
+        "JCCommonLastVersion": "0.3"
+    }
+	, "compsList": [
+		{
+			"name":"Base"
+			, "desc": [
+				"所有 [JC.*, Bizs.*] 组件依赖的基础类"
+			]
+			, "data": [
+
+                {
+                    "name": "JC.common"
+                    , "subtitle": "提供一些全局的静态方法"
+                    , "desc": [
+                        "JC 组件通用静态方法和属性 ( JC.common, 别名: JC.f ) "
+                        , "所有 JC 组件都会依赖这个静态类"
+                    ]
+                    , "output": "common.js"
+                    , "data": [
+                       {
+                            "version":"0.1"
+                            , "require":[ {
+                                "name": "jquery"
+                            }]
+                            , "download":""
+                            , "nodemo":"true"
+                        }
+                       , {
+                            "version":"0.2"
+                            , "require":[ {
+                                "name": "jquery"
+                            }]
+                            , "download":""
+                            , "nodemo":"true"
+                        }
+                       , {
+                            "version":"0.3"
+                            , "require":[ {
+                                "name": "jquery"
+                            }]
+                            , "download":""
+                            , "nodemo":"true"
+                        }
+                    ]
+                }
+                , {
+                    "name":"JC.BaseMVC"
+                    , "subtitle": "JC 组件基础代码结构"
+                    , "desc": [
+                        "MVC 抽象类 ( 仅供扩展用, 这个类不能实例化)"
+                        , "新的 JC 组件 和 Biz(业务)组件 全部继承自 JC.BaseMVC"
+                        , "旧的 JC/Biz 组件将会逐渐升级为继承自 JC.BaseMVC"
+                    ]
+                    , "output": "BaseMVC.js"
+                    , "data": [
+                        {
+                            "require":[ {
+                                    "name": "JC.common" 
+                                }
+                            ]
+                            , "download":""
+                            , "nodemo":"true"
+                            , "version":"0.1"
+                        }
+                    ]
+                }
+			]
+		}
+        , {
+			"name":"JC"
+			, "desc":[
+                "JC.* 开头的组件是通用组件"
+			]
+            , "data": [
+                {
+                    "name": "JC.AjaxTree"
+					, "subtitle":"AJAX树菜单组件"
+					, "desc":[
+						"JC.AjaxTree AJAX树菜单组件"
+						, "响应式初始化, 当光标焦点 foucs 到 文本框时, 会检查是否需要自动初始化 JC.AutoComplete 实例"
+					]
+                    , "output": "AjaxTree.js"
+                    , "data": [
+                        {
+                            "version":"0.1"
+                            , "require":[
+                                {
+                                    "name":"JSON"
+                                }
+                                , {
+                                    "name":"JC.BaseMVC"
+                                }
+                            ]
+                        }
+                    ]
+                }
+                , {
+                    "name": "JC.ExampleComponent"
+                    , "subtitle":"example subtitle"
+                    , "desc":[
+                        "example desc"
+                        , "example desc1"
+                    ]
+                    , "output": "ExampleComponent.js"
+                    , "data": [
+                        {
+                            "version":"0.1"
+                            , "require":[
+                                {
+                                    "name":"JC.BaseMVC"
+                                }
+                            ]
+                        }
+                    ]
+                }
+
+                , {
+                    "name": "JC.Cover"
+                    , "subtitle":"遮罩"
+                    , "desc":[
+                        "JC.Cover 遮罩层组件。用于遮盖指定元素，支持滑动动画效果。"
+                        , "支持响应式初始化, 当光标焦点 foucs 到 指定元素时, 会检查是否需要自动初始化 JC.AutoComplete 实例"
+                    ]
+                    , "api":"../../docs_api/classes/JC.Cover.html"
+                    , "output": "Cover.js"
+                    , "data": [
+                        {
+                            "version":"0.1"
+                            , "require":[
+                                {
+                                    "name":"JC.BaseMVC"
+                                }
+                            ]
+                        }
+                    ]
+                }
+
+                , {
+                    "name": "JC.Rate"
+                    , "subtitle":"打分组件"
+                    , "desc":[
+                        "JC.Rate 打分组件。支持简单的评分功能，支持星形图形评分。"
+                        , "支持响应式初始化, 当光标焦点 foucs 到 指定元素时, 会检查是否需要自动初始化 JC.AutoComplete 实例"
+                    ]
+                    , "api":"../../docs_api/classes/JC.Rate.html"
+                    , "output": "Rate.js"
+                    , "data": [
+                        {
+                            "version":"0.1"
+                            , "require":[
+                                {
+                                    "name":"JC.BaseMVC"
+                                }
+                            ]
+                        }
+                    ]
+                }
+                /*
+                , {
+                    "name": "JC.NSlider"
+                    , "subtitle":"轮播图组件"
+                    , "desc":[
+                        "JC.NSlider 轮播图组件"
+                        , "支持单图轮播，多图同页轮播，无缝循环轮播，自动滑动。"
+                    ]
+                    , "output": "NSlider.js"
+                    , "data": [
+                        {
+                            "version":"0.1"
+                            , "require":[
+                                {
+                                    "name":"JC.BaseMVC"
+                                }
+                            ]
+                        }
+                    ]
+                }
+                */
+            ]
+        }
+        , {
+            "name": "Bizs"
+            , "desc": [
+                "Bizs 开头的组件为业务组件，主要在特定的项目中使用"
+            ]
+            , "data": [
+                {
+                    "name": "Bizs.ActionLogic"
+					, "subtitle":"组件化一些零散的操作"
+					, "desc":[
+                        "应用场景 "
+                        , "点击后弹框( 脚本模板 ) "
+                        , "点击后弹框( AJAX ) "
+                        , "点击后弹框( Dom 模板 ) "
+                        , "点击后执行 AJAX 操作"
+					]
+                    , "output": "ActionLogic.js"
+                    , "data": [
+                        {
+                            "version":"0.1"
+                            , "noSimpleDemo": true
+                            , "require":[
+                                {
+                                    "name":"JC.BaseMVC"
+                                }
+                                , {
+                                    "name":"JC.Panel"
+                                }
+                            ]
+                        }
+                    ]
+                }
+                ,{
+                    "name": "Bizs.DMultiDate"
+                    , "subtitle":"单、双复合日历业务逻辑组件"
+                    , "desc":[
+                       "根据select选项弹出日、周、月、季日历，并计算出起始日期和结束日期；"
+                       , "通过html属性可以配置最长可以选择多少个天、周、月、季。"
+                       , "自动初始化 class = \"js_autoDMultiDate\"的HTML标签"
+                   ]
+                    , "output": "DMultiDate.js"
+                    , "data": [
+                        {
+                            "version":"0.1"
+                            , "noSimpleDemo": true
+                            , "require":[
+                                {
+                                    "name":"JC.BaseMVC"
+                                }
+                                , {
+                                    "name":"JC.Calendar"
+                                }
+                            ]
+                        }
+                    ]
+                }
+                , {
+                    "name": "Bizs.ExampleComponent"
+                    , "subtitle":"example subtitle"
+                    , "desc":[
+                        "example desc"
+                        , "example desc1"
+                    ]
+                    , "output": "ExampleComponent.js"
+                    , "data": [
+                        {
+                            "version":"0.1"
+                            , "require":[
+                                {
+                                    "name":"JC.BaseMVC"
+                                }
+                            ]
+                        }
+                    ]
+                }
+                /*
+                ,{
+                    "name": "Bizs.MultiDate"
+                    , "subtitle":"单复合日历业务逻辑组件"
+                    , "desc":[
+                       "根据select选项弹出日、周、月、季日历，并计算出起始日期和结束日期；"
+                       , "通过html属性可以配置最长可以选择多少个天、周、月、季。"
+                       , "自动初始化 class = \"js_autoDMultiDate\"的HTML标签"
+                   ]
+                    , "output": "DMultiDate.js"
+                    , "data": [
+                        {
+                            "version":"0.1"
+                            , "noSimpleDemo": true
+                            , "require":[
+                                {
+                                    "name":"JC.BaseMVC"
+                                }
+                                , {
+                                    "name":"JC.Calendar"
+                                }
+                            ]
+                        }
+                    ]
+                }
+                */
+            ]
+        }
+        , {
+            "name": "Plugin"
+            , "desc": [
+                "所有非 [JC.*, Bizs.*] 的组件都归类为plugin"
+            ]
+            , "data": [
+                {
+                    "name": "Aes"
+                    , "subtitle": "可逆的加密算法"
+                    , "desc": [
+                        "高级加密标准（英语：Advanced Encryption Standard，缩写：AES），在密码学中又称Rijndael加密法，是美国联邦政府采用的一种区块加密标准。这个标准用来替代原先的DES，已经被多方分析且广为全世界所使用。"
+                    ]
+                    , "data": [
+                        {
+                            "version": "2005-2012"
+                            , "outlink": "//www.movable-type.co.uk/scripts/aes.html"
+                        }
+                    ]
+                }
+                , {
+                    "name": "jquery"
+                    , "desc": []
+                    , "data": [
+                        {
+                            "version": "1.9.1"
+                            , "outlink": "//www.jquery.com"
+                        }
+                    ]
+                }, {
+                    "name": "JSON"
+                    , "desc": []
+                    , "data": [
+                        {
+                            "version": "2"
+                            , "outlink": "//www.json.org"
+                            , "output": "json.js"
+                        }
+                    ]
+                }
+
+            ]
+        }
+	]
+}
